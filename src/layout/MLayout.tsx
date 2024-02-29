@@ -2,6 +2,9 @@
 import ModalRegister from "@/feature/Home/components/ModalRegister";
 import { Button, Col, Layout, Row } from "antd";
 import React, { useState } from "react";
+import Logo from "../../public/images/grab_logo.png";
+import Image from "next/image";
+import Link from "next/link";
 
 const { Header, Footer, Content } = Layout;
 
@@ -32,8 +35,12 @@ const MLayout = ({ children }: { children: React.ReactNode }) => {
         }}
         className="shadow-lg px-2 xl:px-12"
       >
-        <div className="xl:text-2xl">Logo</div>
-        <div className="text-base xl:text-xl font-bold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer">
+        <div className="xl:text-2xl">
+          <Link href="/">
+            <Image src={Logo} alt="logo" className="w-full" />
+          </Link>
+        </div>
+        <div className="text-base xl:text-xl hidden sm:block font-bold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer">
           Trở thành đối tác Grab
         </div>
         <a
