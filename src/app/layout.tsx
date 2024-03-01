@@ -8,7 +8,7 @@ import Logo from "../../public/images/grab_logo.png"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Grab Hồ Chí Minh",
+  title: "Grab Việt Nam",
 };
 
 export default function RootLayout({

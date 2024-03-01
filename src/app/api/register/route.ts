@@ -1,5 +1,6 @@
 import { FormState } from "@/feature/Home/components/ModalRegister";
 import { google } from "googleapis";
+import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   const data = await req.text();
@@ -34,10 +35,40 @@ export async function POST(req: Request) {
         ],
       },
     });
+
+    const transporter = nodemailer.createTransport({
+      service: "Gmail",
+      host: "smtp.gmail.com",
+      port: 465,
+      auth: {
+        user: "top180802@gmail.com",
+        pass: "zumm rcqk rjki atcm",
+      },
+    });
+
+    const mainOptions = {
+      from: "Grab-App",
+      to: "huonglt070819@gmail.com",
+      subject: "Khách hàng đăng ký Grab",
+      text: "Bạn đã nhận được 1 thông báo đăng ký mới",
+      html: `
+        <p>Thông tin khách hàng đăng ký mới:</p>
+        <ul>
+          <li>Tên khách hàng: ${body.name}</li>
+          <li>Số điện thoại: ${body.phone}</li>
+          <li>CMND/CCCD: ${body.identification}</li>
+          <li>Tỉnh thành đăng ký: ${body.province}</li>
+          <li>Loại đối tác đăng ký: ${body.type === "bike" ? "Đối tác 2 bánh": "Đối tác 4 bánh"}</li>
+        </ul>
+      `
+    };
+
+    await transporter.sendMail(mainOptions);
+
     return new Response(JSON.stringify(response.data), {
       status: 200,
-    })
+    });
   } catch (e) {
-    console.log("🚀 ~ e:", e);
+    throw new Error("Có lỗi xảy ra.");
   }
 }

@@ -31,8 +31,16 @@ const ModalRegister = ({
       },
       body: JSON.stringify(data),
     });
-    const content = await res?.json();
+    if (res.status === 500) {
+      Swal.fire({
+        title: "Thất bại!",
+        text: "Có lỗi xảy ra trong quá trình đăng ký. Vui lòng thử lại.",
+        icon: "error",
+        confirmButtonText: "Đóng",
+      });
+    }
     setIsLoading(false);
+    const content = await res?.json();
 
     if (content) {
       Swal.fire({
@@ -61,7 +69,7 @@ const ModalRegister = ({
         centered
       >
         <div className="text-2xl text-green-600 text-center font-semibold">
-          Đăng ký GrabBike
+          Đăng ký GrabBike | GrabCar
         </div>
         <div className="text-base text-center my-4">
           Điền thông tin theo form dưới đây để được nhân viên tư vấn hỗ trợ
@@ -79,6 +87,7 @@ const ModalRegister = ({
             name="phone"
             label="Số điện thoại"
             rules={[
+              {required: true, message: "Bạn chưa nhập số điện thoại"},
               {
                 validator: (_, value) => checkPhoneNumber(value),
                 message: "Vui lòng nhập số điện thoại hợp lệ",
@@ -90,12 +99,6 @@ const ModalRegister = ({
           <Form.Item
             name="identification"
             label="Số chứng minh thư/ CCCD"
-            rules={[
-              {
-                required: true,
-                message: "Bạn chưa nhập số chứng minh thư/ CCCD",
-              },
-            ]}
           >
             <Input size="large" placeholder="Nhập số chứng minh thư/ CCCD" />
           </Form.Item>
