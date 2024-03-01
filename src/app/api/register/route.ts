@@ -42,7 +42,7 @@ export async function POST(req: Request) {
       port: 465,
       auth: {
         user: "top180802@gmail.com",
-        pass: "zumm rcqk rjki atcm",
+        pass: process.env.GMAIL_PASSWORD,
       },
     });
 
