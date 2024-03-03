@@ -1,20 +1,45 @@
 "use client";
 import ModalRegister from "@/feature/Home/components/ModalRegister";
 import { Button, Col, Layout, Row } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../../public/images/grab_logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import { Setting } from "@/feature/admin/Dashboard/Index";
 
 const { Header, Footer, Content } = Layout;
+
+export const formatPhonenumber = (phoneNumber: string) => {
+	return phoneNumber?.replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3');
+};
+
 
 const MLayout = ({ children }: { children: React.ReactNode }) => {
   const [isOpenModalRegister, setIsOpenModalRegister] =
     useState<boolean>(false);
+  const [information, setInformation] = useState<Setting[]>()
+
 
   const handleOpenModalRegister = () => {
     setIsOpenModalRegister(true);
   };
+
+
+  useEffect(() => {
+    const getSettings = async () => {
+      const res = await fetch("api/dashboard", {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+      setInformation(data?.settings);
+    };
+    getSettings();
+  }, []);
+
   return (
     <Layout>
       <ModalRegister
@@ -47,7 +72,7 @@ const MLayout = ({ children }: { children: React.ReactNode }) => {
           href="tel:0902340912"
           className="text-base xl:text-xl font-bold cursor-pointer"
         >
-          090 234 0912
+          {formatPhonenumber(information?.find((s: Setting) => s.key === "phone")?.value || "")}
         </a>
       </Header>
       <Content>{children}</Content>

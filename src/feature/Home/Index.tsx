@@ -1,6 +1,6 @@
 "use client";
 import { Button, Col, Collapse, CollapseProps, Form, Input, Row } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image1 from "../../../public/images/image1.jpeg";
 import Image2 from "../../../public/images/image2.jpeg";
 import Image3 from "../../../public/images/image3.jpeg";
@@ -12,7 +12,7 @@ import ImageHeader from "../../../public/images/image-dax-header-drive.jpeg";
 import Image from "next/image";
 import { ArrowDownOutlined } from "@ant-design/icons";
 import ModalRegister from "./components/ModalRegister";
-
+import { SettingState } from "../admin/Dashboard/Index";
 
 const vietnamesePhoneNumberRegex = /(0|\+84)(\d{9})\b/;
 
@@ -164,7 +164,6 @@ const HomePage = () => {
   const handleOpenModalRegister = () => {
     setIsOpenModalRegister(true);
   };
-
 
   return (
     <div className="w-full bg-white">
