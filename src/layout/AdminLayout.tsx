@@ -41,6 +41,17 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
       if (!getUser) {
         router.push("/admin/login");
       }
+
+      const now: number = new Date().getTime();
+      const setupTime: number = Number(localStorage.getItem("setupTime"));
+      if (setupTime == null) {
+        localStorage.setItem("setupTime", JSON.stringify(now));
+      } else {
+        if (now - setupTime > 1000 * 60 * 60 * 3) {
+          localStorage.removeItem("grab_auth");
+          localStorage.setItem("setupTime", JSON.stringify(now));
+        }
+      }
     }
   }, [router]);
 

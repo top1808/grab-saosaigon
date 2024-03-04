@@ -1,5 +1,6 @@
 "use client";
 import { Button, Form, Input } from "antd";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
@@ -57,7 +58,7 @@ const LoginPage = () => {
       <div className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:w-1/4 lg:max-w-screen-md">
         <div className="p-5 bg-white md:flex-1">
           <h3 className="my-4 text-2xl font-semibold text-gray-700">
-            Account Login
+            Đăng nhập
           </h3>
           <Form layout="vertical" onFinish={onSubmit} form={form}>
             <Form.Item
@@ -93,6 +94,11 @@ const LoginPage = () => {
               </Button>
             </Form.Item>
           </Form>
+          <div className="text-center">
+            <Link className="text-blue-500 underline" href="/">
+              Quay lại trang chủ
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -17,7 +17,6 @@ export const POST = async (req: Request) => {
 
     return NextResponse.json({ user }, { status: 200 });
   } catch (e) {
-    console.log("🚀 ~ POST ~ e:", e)
     return NextResponse.json({ message: "Có lỗi xảy ra" }, { status: 500 });
   }
 };
