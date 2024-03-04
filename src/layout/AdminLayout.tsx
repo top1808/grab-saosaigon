@@ -13,7 +13,7 @@ const { Header, Content } = Layout;
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
 
-  const [user, setUser] = useState<FormLoginState | null>(null)
+  const [user, setUser] = useState<FormLoginState | null>(null);
 
   const profileItems: MenuProps["items"] = [
     {
@@ -21,8 +21,8 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
         <div
           className="flex items-center gap-2"
           onClick={() => {
-            localStorage.removeItem("grab_auth");
-            router.push("/admin/login")
+            window && window?.localStorage?.removeItem("grab_auth");
+            router.push("/admin/login");
           }}
         >
           Log out
@@ -33,12 +33,16 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   ];
 
   useEffect(() => {
-    const getUser = localStorage.getItem("grab_auth") ? JSON.parse(localStorage.getItem("grab_auth") || "") : null;
-    setUser(getUser || null);
-    if (!getUser) {
-        router.push("/admin/login")
+    if (typeof window !== undefined) {
+      const getUser = localStorage?.getItem("grab_auth")
+        ? JSON.parse(localStorage.getItem("grab_auth") || "")
+        : null;
+      setUser(getUser || null);
+      if (!getUser) {
+        router.push("/admin/login");
+      }
     }
-  }, [router])
+  }, [router]);
 
   return (
     <Layout>

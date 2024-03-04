@@ -14,9 +14,6 @@ const LoginPage = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const user: FormLoginState = localStorage.getItem("grab_auth") as FormLoginState;
-
-
   const onSubmit = async (data: FormLoginState) => {
     setIsLoading(true);
     const res = await fetch("api/auth/login", {
@@ -39,16 +36,21 @@ const LoginPage = () => {
         confirmButtonText: "Đóng",
       });
     } else if (res.status === 200) {
-      localStorage.setItem("grab_auth", JSON.stringify(response.user))
+      window?.localStorage?.setItem("grab_auth", JSON.stringify(response.user));
       router.push("/admin");
     }
   };
 
   useEffect(() => {
-    if (!!user) {
-        router.push("/admin")
+    if (typeof window !== undefined) {
+      const user: FormLoginState = window?.localStorage?.getItem(
+        "grab_auth"
+      ) as FormLoginState;
+      if (!!user) {
+        router.push("/admin");
+      }
     }
-  }, [router, user])
+  }, [router]);
 
   return (
     <div className="flex items-center min-h-screen p-4 bg-gray-100 justify-center">
@@ -85,7 +87,7 @@ const LoginPage = () => {
                 className="bg-green-600 text-white"
                 htmlType="submit"
                 size="large"
-                  loading={isLoading}
+                loading={isLoading}
               >
                 Đăng nhập
               </Button>
