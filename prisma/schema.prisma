@@ -9,7 +9,7 @@ datasource db {
 
 model Setting {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
-  key   String
+  key   String @unique
   value String
 }
 
