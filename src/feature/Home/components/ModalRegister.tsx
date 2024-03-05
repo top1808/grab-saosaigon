@@ -97,12 +97,6 @@ const ModalRegister = ({
             <Input size="large" placeholder="Nhập số điện thoại" />
           </Form.Item>
           <Form.Item
-            name="identification"
-            label="Số chứng minh thư/ CCCD"
-          >
-            <Input size="large" placeholder="Nhập số chứng minh thư/ CCCD" />
-          </Form.Item>
-          <Form.Item
             name="province"
             label="Tỉnh thành đăng ký"
             rules={[

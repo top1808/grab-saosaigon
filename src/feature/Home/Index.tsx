@@ -197,6 +197,9 @@ const HomePage = () => {
                 Đăng ký
               </Button>
             </div>
+            <div className="text-xl text-center mt-4 font-semibold">
+              Nhấn đăng ký để được hỗ trợ nhanh nhất
+            </div>
           </Col>
           <Col xs={24} xl={4}></Col>
           <Col xs={24} xl={8}>

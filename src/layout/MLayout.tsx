@@ -10,20 +10,17 @@ import { Setting } from "@/feature/admin/Dashboard/Index";
 const { Header, Footer, Content } = Layout;
 
 export const formatPhonenumber = (phoneNumber: string) => {
-	return phoneNumber?.replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3');
+  return phoneNumber?.replace(/(\d{4})(\d{3})(\d{3})/, "$1 $2 $3");
 };
-
 
 const MLayout = ({ children }: { children: React.ReactNode }) => {
   const [isOpenModalRegister, setIsOpenModalRegister] =
     useState<boolean>(false);
-  const [information, setInformation] = useState<Setting[]>()
-
+  const [information, setInformation] = useState<Setting[]>();
 
   const handleOpenModalRegister = () => {
     setIsOpenModalRegister(true);
   };
-
 
   useEffect(() => {
     const getSettings = async () => {
@@ -68,12 +65,15 @@ const MLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="text-base xl:text-xl hidden sm:block font-bold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer">
           Trở thành đối tác Grab
         </div>
-        <a
-          href="tel:0902340912"
-          className="text-base xl:text-xl font-bold cursor-pointer"
-        >
-          {formatPhonenumber(information?.find((s: Setting) => s.key === "phone")?.value || "")}
-        </a>
+          <a
+            href="tel:0902340912"
+            className="text-xl xl:text-2xl font-bold cursor-pointer"
+            >
+            Tổng đài: &nbsp;
+            {formatPhonenumber(
+              information?.find((s: Setting) => s.key === "phone")?.value || ""
+            )}
+          </a>
       </Header>
       <Content>{children}</Content>
       <Footer className="bg-green-800 text-white">
