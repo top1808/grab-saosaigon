@@ -71,7 +71,7 @@ const MLayout = ({ children }: { children: React.ReactNode }) => {
             >
             Tổng đài: &nbsp;
             {formatPhonenumber(
-              information?.find((s: Setting) => s.key === "phone")?.value || ""
+              information?.find((s: Setting) => s.key === "phone")?.value || "0902340912"
             )}
           </a>
       </Header>
