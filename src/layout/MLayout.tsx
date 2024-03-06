@@ -65,15 +65,16 @@ const MLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="text-base xl:text-xl hidden sm:block font-bold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer">
           Trở thành đối tác Grab
         </div>
-          <a
-            href="tel:0902340912"
-            className="text-xl xl:text-2xl font-bold cursor-pointer"
-            >
-            Tổng đài: &nbsp;
-            {formatPhonenumber(
-              information?.find((s: Setting) => s.key === "phone")?.value || "0902340912"
-            )}
-          </a>
+        <a
+          href="tel:0902340912"
+          className="text-xl xl:text-2xl font-bold cursor-pointer"
+        >
+          Tổng đài: &nbsp;
+          {formatPhonenumber(
+            information?.find((s: Setting) => s.key === "phone")?.value ||
+              "0902340912"
+          )}
+        </a>
       </Header>
       <Content>{children}</Content>
       <Footer className="bg-green-800 text-white">
