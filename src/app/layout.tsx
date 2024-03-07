@@ -1,13 +1,20 @@
 import "./globals.css";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "sweetalert2/src/sweetalert2.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Grab Việt Nam",
-};
+export async function generateMetadata() {
+  const siteURL = 'https://www.grab-dangky.com';
+
+  return {
+    title: `Grab Việt Nam`,
+    description: `Đăng ký để trở thành đối tác xe công nghệ Grab.`,
+    alternates: {
+      canonical: `${siteURL}/`,
+    },
+  };
+}
 
 export default function RootLayout({
   children,
