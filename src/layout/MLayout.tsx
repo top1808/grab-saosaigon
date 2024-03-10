@@ -59,12 +59,12 @@ const MLayout = ({ children }: { children: React.ReactNode }) => {
       >
         <div className="xl:text-2xl">
           <Link href="/">
-            <Image src={Logo} alt="logo" className="w-full" />
+            <Image src={Logo} alt="logo_grab" className="w-full" />
           </Link>
         </div>
-        <div className="text-base xl:text-xl hidden sm:block font-bold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer">
+        <h1 className="text-base xl:text-xl hidden sm:block font-bold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer">
           Trở thành đối tác Grab
-        </div>
+        </h1>
         <a
           href="tel:0902340912"
           className="text-xl xl:text-2xl font-bold cursor-pointer"

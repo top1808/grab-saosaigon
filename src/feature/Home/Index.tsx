@@ -170,17 +170,17 @@ const HomePage = () => {
         isOpen={isOpenModalRegister}
         handleClose={setIsOpenModalRegister}
       />
-      <div className="w-full bg-green-600 text-center text-white p-2 text-2xl">
+      <h1 className="w-full bg-green-600 text-center text-white p-2 text-2xl">
         Đăng ký Grab Bike | Grab Car
-      </div>
+      </h1>
       <div>
         <Row gutter={[12, 12]}>
           <Col xs={24}>
             <div className="app-banner">
               <div className="xl:w-1/2 drop-shadow-lg">
-                <div className="xl:text-5xl text-4xl font-semibold">
+                <h2 className="xl:text-5xl text-4xl font-semibold">
                   Trở thành đối tác của Grab
-                </div>
+                </h2>
                 <div className="xl:px-12 xl:text-xl text-base my-4">
                   Trở thành Đối tác của Grab để làm chủ cuộc sống của mình và
                   hơn thế nữa. Hãy cùng nhau bắt đầu hành trình ngay nào.
@@ -239,9 +239,9 @@ const HomePage = () => {
           <Row gutter={[12, 12]} className="mt-8" justify="space-between">
             <Col xs={24} xl={6}>
               <Image src={Image1} alt="image" className="w-full" />
-              <div className="text-2xl font-semibold my-4">
+              <h3 className="text-2xl font-semibold my-4">
                 Tự do và tự chủ về thời gian
-              </div>
+              </h3>
               <ul className="text-base ml-4">
                 <li>
                   Thời gian linh động, bạn hoàn toàn có thể chủ động quyết định
@@ -259,9 +259,9 @@ const HomePage = () => {
             </Col>
             <Col xs={24} xl={6} className="xl:mt-40">
               <Image src={Image2} alt="image" className="w-full" />
-              <div className="text-2xl font-semibold my-4">
-                Tự do và tự chủ về thời gian
-              </div>
+              <h3 className="text-2xl font-semibold my-4">
+              Thu nhập tin cậy
+              </h3>
               <ul className="text-base ml-4">
                 <li>Rút tiền siêu nhanh</li>
                 <li>
@@ -275,9 +275,9 @@ const HomePage = () => {
             </Col>
             <Col xs={24} xl={6} className="xl:mt-80">
               <Image src={Image3} alt="image" className="w-full" />
-              <div className="text-2xl font-semibold my-4">
-                Tự do và tự chủ về thời gian
-              </div>
+              <h3 className="text-2xl font-semibold my-4">
+              Hỗ trợ nhanh chóng và liên tục
+              </h3>
               <ul className="text-base ml-4">
                 <li>Hỗ trợ Đối tác 24/7</li>
                 <li>
@@ -373,9 +373,9 @@ const HomePage = () => {
               </Col>
             </Row>
             <div className="bg-gray-100 p-12 rounded mt-8">
-              <div className="text-4xl font-semibold mb-8">
+              <h2 className="text-4xl font-semibold mb-8">
                 Dễ dàng và nhanh chóng tăng thêm thu nhập
-              </div>
+              </h2>
               <Collapse
                 items={collapseCarItems}
                 style={{ background: "#fff" }}
@@ -468,9 +468,9 @@ const HomePage = () => {
               </Col>
             </Row>
             <div className="bg-gray-100 p-12 rounded mt-8">
-              <div className="text-4xl font-semibold mb-8">
+              <h2 className="text-4xl font-semibold mb-8">
                 Trở thành Đối tác 2 bánh của Grab
-              </div>
+              </h2>
               <Collapse
                 items={collapseBikeItems}
                 style={{ background: "#fff" }}
