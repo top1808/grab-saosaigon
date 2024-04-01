@@ -69,6 +69,7 @@ export async function POST(req: Request) {
       status: 200,
     });
   } catch (e) {
+    console.log("🚀 ~ POST ~ e:", e)
     throw new Error("Có lỗi xảy ra.");
   }
 }

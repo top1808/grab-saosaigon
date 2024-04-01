@@ -8,8 +8,8 @@ export async function generateMetadata() {
   const siteURL = 'https://www.grab-dangky.com';
 
   return {
-    title: `Grab Việt Nam`,
-    description: `Đăng ký để trở thành đối tác xe công nghệ Grab.`,
+    title: `Grab Việt Nam. Hướng dẫn, tư vấn đăng ký GrabCar, GrabBike.`,
+    description: `Đăng ký để trở thành tài xế xe công nghệ GrabCar, GrabBike ngay hôm nay.`,
     alternates: {
       canonical: `${siteURL}/`,
     },
