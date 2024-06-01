@@ -122,6 +122,7 @@ const ModalRegister = ({
               options={[
                 { value: "bike", label: "Đối tác 2 bánh" },
                 { value: "car", label: "Đối tác 4 bánh" },
+                { value: "van", label: "Xe tải Van" },
               ]}
               size="large"
               placeholder="Chọn loại đối tác"
