@@ -77,7 +77,7 @@ const MLayout = ({ children }: { children: React.ReactNode }) => {
         </a>
       </Header>
       <Content>{children}</Content>
-      <Footer className="bg-green-800 text-white">
+      <Footer className="bg-green-800 text-white mt-4">
         <Row gutter={[12, 12]} justify="space-between" align="middle">
           <Col xs={24} xl={16}>
             <div className="text-4xl font-bold">
