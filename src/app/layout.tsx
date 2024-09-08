@@ -5,7 +5,7 @@ import "sweetalert2/src/sweetalert2.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export async function generateMetadata() {
-  const siteURL = 'https://www.grab-dangky.com';
+  const siteURL = 'https://www.grab-saosaigon.com';
 
   return {
     title: `Grab Việt Nam. Hướng dẫn tư vấn đăng ký GrabCar.`,
