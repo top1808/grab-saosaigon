@@ -28,7 +28,6 @@ export async function POST(req: Request) {
           [
             body.name,
             body.phone,
-            body.identification,
             body.province,
             body.type,
           ],
@@ -48,7 +47,7 @@ export async function POST(req: Request) {
 
     const mainOptions = {
       from: "Grab-App",
-      to: "huonglt070819@gmail.com",
+      to: "lekhanh.saosaigon@gmail.com",
       subject: "Khách hàng đăng ký Grab",
       text: "Bạn đã nhận được 1 thông báo đăng ký mới",
       html: `
@@ -56,9 +55,8 @@ export async function POST(req: Request) {
         <ul>
           <li>Tên khách hàng: ${body.name}</li>
           <li>Số điện thoại: ${body.phone}</li>
-          <li>CMND/CCCD: ${body.identification}</li>
           <li>Tỉnh thành đăng ký: ${body.province}</li>
-          <li>Loại đối tác đăng ký: ${body.type === "bike" ? "Đối tác 2 bánh": "Đối tác 4 bánh"}</li>
+          <li>Loại đối tác đăng ký: ${body.type === "van" ? "Xe tải Van": "Đối tác 4 bánh"}</li>
         </ul>
       `
     };
@@ -69,7 +67,6 @@ export async function POST(req: Request) {
       status: 200,
     });
   } catch (e) {
-    console.log("🚀 ~ POST ~ e:", e)
     throw new Error("Có lỗi xảy ra.");
   }
 }
