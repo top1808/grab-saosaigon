@@ -5,10 +5,8 @@ import Image1 from "../../../public/images/image1.jpeg";
 import Image2 from "../../../public/images/image2.jpeg";
 import Image3 from "../../../public/images/image3.jpeg";
 import LogoCar from "../../../public/images/logo-drive-car.png";
-import LogoBike from "../../../public/images/logo-ride-vn.png";
-import ImageCar from "../../../public/images/grab-car.jpeg";
-import ImageBike from "../../../public/images/grab-bike.png";
-import ImageHeader from "../../../public/images/banner.jpeg";
+import ImageCar from "../../../public/images/grab-car.jpg";
+import ImageBanner from "../../../public/images/image-dax-header-drive.jpeg";
 import Image from "next/image";
 import { ArrowDownOutlined } from "@ant-design/icons";
 import ModalRegister from "./components/ModalRegister";
@@ -71,91 +69,6 @@ const collapseCarItems: CollapseProps["items"] = [
   },
 ];
 
-const collapseBikeItems: CollapseProps["items"] = [
-  {
-    key: "1",
-    label: (
-      <div className="flex justify-between">
-        <div className="text-base font-medium">GrabBike</div>
-      </div>
-    ),
-    children: (
-      <ul className="text-base ml-12">
-        <li>
-          Sử dụng điện thoại thông minh và phương tiện 2 bánh của mình để đón
-          đưa hàng triệu Khách hàng của Grab mỗi ngày.
-        </li>
-        <li>
-          Các yêu cầu, hồ sơ cần chuẩn bị và hướng dẫn đăng ký GrabBike đã được
-          ghi chú phía trên. Nếu còn thắc mắc nào khác Đối tác vui lòng tham
-          khảo thêm tại mục Câu hỏi thường gặp.
-        </li>
-      </ul>
-    ),
-  },
-  {
-    key: "2",
-    label: (
-      <div className="flex justify-between">
-        <div className="text-base font-medium">GrabFood</div>
-      </div>
-    ),
-    children: (
-      <ul className="text-base ml-12">
-        <li>Cùng Grab giúp hàng triệu thực khách &quot;không bỏ bữa&quot;.</li>
-        <li>
-          Các yêu cầu, hồ sơ cần chuẩn bị và hướng dẫn đăng ký GrabFood đã được
-          ghi chú phía trên. Nếu còn thắc mắc nào khác Đối tác vui lòng tham
-          khảo thêm tại mục Câu hỏi thường gặp.
-        </li>
-      </ul>
-    ),
-  },
-
-  {
-    key: "3",
-    label: (
-      <div className="flex justify-between">
-        <div className="text-base font-medium">GrabMart</div>
-      </div>
-    ),
-    children: (
-      <ul className="text-base ml-12">
-        <li>
-          Giúp mua và giao hàng từ các siêu thị, cửa hàng, chợ theo yêu cầu của
-          Khách hàng trên ứng dụng Grab.
-        </li>
-        <li>
-          Các yêu cầu, hồ sơ cần chuẩn bị và hướng dẫn đăng ký GrabMart đã được
-          ghi chú phía trên. Nếu còn thắc mắc nào khác Đối tác vui lòng tham
-          khảo thêm tại mục Câu hỏi thường gặp.
-        </li>
-      </ul>
-    ),
-  },
-
-  {
-    key: "4",
-    label: (
-      <div className="flex justify-between">
-        <div className="text-base font-medium">GrabExpress</div>
-      </div>
-    ),
-    children: (
-      <ul className="text-base ml-12">
-        <li>
-          Giúp vận chuyển hàng hóa đến các doanh nghiệp và người tiêu dùng.
-        </li>
-        <li>
-          Các yêu cầu, hồ sơ cần chuẩn bị và hướng dẫn đăng ký GrabExpress đã
-          được ghi chú phía trên. Nếu còn thắc mắc nào khác Đối tác vui lòng
-          tham khảo thêm tại mục Câu hỏi thường gặp.
-        </li>
-      </ul>
-    ),
-  },
-];
-
 const HomePage = () => {
   const [isOpenModalRegister, setIsOpenModalRegister] =
     useState<boolean>(false);
@@ -171,13 +84,13 @@ const HomePage = () => {
         handleClose={setIsOpenModalRegister}
       />
       <h1 className="w-full bg-green-600 text-center text-white p-2 text-2xl">
-        Đăng ký Grab Bike | Grab Car
+        Đăng ký Grab Van | Grab Car
       </h1>
       <div>
         <Row gutter={[12, 12]}>
-          <Col xs={24}>
-            <div className="app-banner">
-              <div className="xl:w-1/2 drop-shadow-lg">
+          <Col xs={24} xl={14}>
+            <div className="text-center xl:p-12 p-4">
+              <div className="drop-shadow-lg">
                 <h2 className="xl:text-5xl text-4xl font-semibold">
                   Trở thành đối tác của Grab
                 </h2>
@@ -195,9 +108,15 @@ const HomePage = () => {
                   </Button>
                 </div>
                 <div className="text-xl text-center mt-4 font-semibold">
-                  Nhấn đăng ký để được hỗ trợ nhanh nhất
+                  Đăng ký để trở thành đối tác Grab
                 </div>
               </div>
+            </div>
+          </Col>
+          <Col xs={24} xl={10}>
+            <div className="xl:p-12 p-4">
+            <Image src={ImageBanner} alt="image" className="w-full" />
+
             </div>
           </Col>
         </Row>
@@ -215,23 +134,6 @@ const HomePage = () => {
             >
               <strong>Đối tác 4 bánh</strong>
               <div>Cung cấp dịch vụ di chuyển bằng xe hơi hoặc xe hơi</div>
-              <ArrowDownOutlined className="text-4xl" />
-            </a>
-            <a
-              href=""
-              onClick={(e) => {
-                let car = document.getElementById("bike");
-                e.preventDefault();
-                car &&
-                  car.scrollIntoView({ behavior: "smooth", block: "start" });
-              }}
-              className="w-full flex justify-between items-center py-8 text-base border-t border-black"
-            >
-              <strong>Đối tác 2 bánh</strong>
-              <div>
-                Làm chủ tài chính với chiếc xe máy của chính mình - chở hành
-                khách, giao hàng và thức ăn.
-              </div>
               <ArrowDownOutlined className="text-4xl" />
             </a>
           </div>
@@ -372,107 +274,12 @@ const HomePage = () => {
                 </ul>
               </Col>
             </Row>
-            <div className="bg-gray-100 p-12 rounded mt-8">
+            <div className="bg-gray-100 p-4 xl:p-12 rounded mt-8">
               <h2 className="text-4xl font-semibold mb-8">
                 Dễ dàng và nhanh chóng tăng thêm thu nhập
               </h2>
               <Collapse
                 items={collapseCarItems}
-                style={{ background: "#fff" }}
-              />
-            </div>
-          </div>
-
-          <div id="bike">
-            <Row gutter={[12, 12]} justify="space-between" className="mt-20">
-              <Col xs={24} xl={12}>
-                <Image src={LogoBike} alt="Đối tác 2 bánh" className="w-full" />
-                <div className="text-base mt-8">
-                  Di chuyển bằng phương tiện 2 bánh của mình để phục vụ hàng
-                  triệu Khách hàng của Grab mỗi ngày.
-                </div>
-              </Col>
-              <Col xs={24} xl={10}>
-                <Image src={ImageBike} alt="image" className="w-full" />
-              </Col>
-            </Row>
-            <Row gutter={[12, 12]} justify="space-between" className="mt-12">
-              <Col xs={24} xl={6}>
-                <div className="text-2xl font-semibold">Yêu cầu</div>
-                <ul className="text-base ml-4">
-                  <li>
-                    Công dân Việt Nam trong độ tuổi: Nam từ 18 đến 60 tuổi, Nữ
-                    từ 18 đến 55 tuổi. Riêng với Đối tác Tài xế là người khuyết
-                    tật đủ điều kiện tham gia dự án hợp tác với các Đối tác là
-                    người khuyết tật (&quot;Dự án&quot;) áp dụng độ tuổi từ
-                    18-60 tuổi
-                  </li>
-                  <li>Xe đăng ký có phân khối lớn hơn 50cc</li>
-                  <li>Trang bị đầy đủ đồng phục Grab khi hoạt động</li>
-                  <li>
-                    Đối với dịch vụ: GrabFood,GrabExpress Siêu tốc thực phẩm,
-                    GrabMart và GrabExpress có thể sử dụng cả dòng xe số/xe ga
-                    thông thường và xe 2 bánh điện (xe máy điện, xe mô tô điện)
-                  </li>
-                </ul>
-              </Col>
-              <Col xs={24} xl={6}>
-                <div className="text-2xl font-semibold">Hồ sơ cần chuẩn bị</div>
-                <ul className="text-base ml-4">
-                  <li>
-                    Chứng minh nhân dân/hộ chiếu/thẻ căn cước (còn hạn trong
-                    vòng 1 tháng)
-                  </li>
-                  <li>
-                    Lý lịch tư pháp (LLTP): Bản gốc LLTP (không quá 10 tháng)
-                    hoặc giấy hẹn LLTP (ngày hẹn trả còn hạn) biên lai bưu điện
-                  </li>
-                  <li>Tài khoản ngân hàng chính chủ</li>
-                  <li>Giấy đăng ký xe</li>
-                  <li>
-                    Giấy chứng nhận bảo hiểm bắt buộc trách nhiệm dân sự của chủ
-                    xe cơ giới
-                  </li>
-                  <li>Bằng lái xe (A1 hoặc A2)</li>
-                  <li>
-                    Mã số thuế cá nhân để thực hiện các nghĩa vụ thuế với cơ
-                    quan chức năng . Đăng ký mã số thuế &nbsp;
-                    <a
-                      href="https://thuedientu.gdt.gov.vn/"
-                      target="_blank"
-                      className="underline text-blue-500"
-                    >
-                      tại đây
-                    </a>
-                  </li>
-                </ul>
-              </Col>
-              <Col xs={24} xl={6}>
-                <div className="text-2xl font-semibold">Bước tiếp theo</div>
-                <ul className="text-base ml-4">
-                  <li>Chuẩn bị và cập nhật hồ sơ trực tuyến</li>
-                  <li>
-                    Chờ tin nhắn thông báo lịch hẹn (ngày, giờ, địa điểm) nộp hồ
-                    sơ từ Grab
-                  </li>
-                  <li>Nộp hồ sơ theo đúng địa điểm và thời gian đã được hẹn</li>
-                  <li>
-                    Hoàn thành và vượt qua khóa đào tạo trực tuyến được gửi về
-                    tin nhắn điện thoại đã đăng ký.
-                  </li>
-                  <li>
-                    Trang bị đồng phục và tài khoản của bạn sẽ được kích hoạt
-                    tài khoản
-                  </li>
-                </ul>
-              </Col>
-            </Row>
-            <div className="bg-gray-100 p-12 rounded mt-8">
-              <h2 className="text-4xl font-semibold mb-8">
-                Trở thành Đối tác 2 bánh của Grab
-              </h2>
-              <Collapse
-                items={collapseBikeItems}
                 style={{ background: "#fff" }}
               />
             </div>

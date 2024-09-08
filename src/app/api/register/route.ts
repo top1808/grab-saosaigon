@@ -46,7 +46,7 @@ export async function POST(req: Request) {
     });
 
     const mainOptions = {
-      from: "Grab-App",
+      from: "Grab-SaoSaiGon",
       to: "lekhanh.saosaigon@gmail.com",
       subject: "Khách hàng đăng ký Grab",
       text: "Bạn đã nhận được 1 thông báo đăng ký mới",
@@ -67,6 +67,7 @@ export async function POST(req: Request) {
       status: 200,
     });
   } catch (e) {
+    console.log("🚀 ~ POST ~ e:", e)
     throw new Error("Có lỗi xảy ra.");
   }
 }

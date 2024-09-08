@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 export interface FormState {
   name?: string;
   phone?: string;
-  identification?: string;
   province?: string;
   type?: string;
 }
@@ -69,7 +68,7 @@ const ModalRegister = ({
         centered
       >
         <div className="text-2xl text-green-600 text-center font-semibold">
-          Đăng ký GrabBike | GrabCar
+          Đăng ký Grab Van | GrabCar
         </div>
         <div className="text-base text-center my-4">
           Điền thông tin theo form dưới đây để được nhân viên tư vấn hỗ trợ
@@ -120,7 +119,6 @@ const ModalRegister = ({
           >
             <Select
               options={[
-                { value: "bike", label: "Đối tác 2 bánh" },
                 { value: "car", label: "Đối tác 4 bánh" },
                 { value: "van", label: "Xe tải Van" },
               ]}

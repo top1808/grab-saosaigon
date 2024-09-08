@@ -10,7 +10,7 @@ import { Setting } from "@/feature/admin/Dashboard/Index";
 const { Header, Footer, Content } = Layout;
 
 export const formatPhonenumber = (phoneNumber: string) => {
-  return phoneNumber?.replace(/(\d{4})(\d{3})(\d{3})/, "$1 $2 $3");
+  return phoneNumber?.replace(/(\d{3})(\d{3})(\d{4})/, "$1 $2 $3");
 };
 
 const MLayout = ({ children }: { children: React.ReactNode }) => {
@@ -66,13 +66,13 @@ const MLayout = ({ children }: { children: React.ReactNode }) => {
           Trở thành đối tác Grab
         </h1>
         <a
-          href="tel:0902340912"
+          href="tel:0343577939"
           className="text-xl xl:text-2xl font-bold cursor-pointer"
         >
           Tổng đài: &nbsp;
           {formatPhonenumber(
             information?.find((s: Setting) => s.key === "phone")?.value ||
-              "0902340912"
+              "0343577939"
           )}
         </a>
       </Header>

@@ -8,20 +8,20 @@ export async function generateMetadata() {
   const siteURL = 'https://www.grab-dangky.com';
 
   return {
-    title: `Grab Việt Nam. Hướng dẫn tư vấn đăng ký GrabCar, đăng ký GrabBike.`,
-    description: `Hotline đăng ký Grab: 0902340912 - Đăng ký Grabcar, đăng ký grab bike ngay hôm nay để trở thành tài xế thời công nghệ. Thu nhập lên đến 35 triệu đồng/tháng khi hoạt động`,
+    title: `Grab Việt Nam. Hướng dẫn tư vấn đăng ký GrabCar.`,
+    description: `Hotline đăng ký Grab: 0902340912 - Đăng ký Grabcar, đăng ký grab van ngay hôm nay để trở thành tài xế thời công nghệ. Thu nhập lên đến 35 triệu đồng/tháng khi hoạt động`,
     metadataBase: new URL(siteURL),
     alternates: {
       canonical: "/",
     },
     openGraph: {
-      title: 'Đăng ký Grab car, đăng ký Grab bike tại Thành phố Hồ Chí Minh, Hà Nội và 1 số tỉnh thành khác | Grab Việt Nam.',
-      description: 'Hotline đăng ký Grab: 0902340912 - Đăng ký Grabcar, đăng ký grab bike ngay hôm nay để trở thành tài xế thời công nghệ. Thu nhập lên đến 35 triệu đồng/tháng khi hoạt động',
+      title: 'Đăng ký Grab car, đăng ký Grab van tại Thành phố Hồ Chí Minh, Hà Nội và 1 số tỉnh thành khác | Grab Việt Nam.',
+      description: 'Hotline đăng ký Grab: 0902340912 - Đăng ký Grabcar, đăng ký grab van ngay hôm nay để trở thành tài xế thời công nghệ. Thu nhập lên đến 35 triệu đồng/tháng khi hoạt động',
       url: siteURL,
       siteName: 'Đăng ký grab',
       type: 'website',
     },
-    keywords: ['Grab', "Đăng ký Grab", "Grab car", "Grab bike", "Hướng dẫn đăng ký grab"]
+    keywords: ['Grab', "Đăng ký Grab", "Grab car", "Grab van", "Hướng dẫn đăng ký grab"]
   };
 }
 
