@@ -9,14 +9,14 @@ export async function generateMetadata() {
 
   return {
     title: `Grab Việt Nam. Hướng dẫn tư vấn đăng ký GrabCar.`,
-    description: `Hotline đăng ký Grab: 0902340912 - Đăng ký Grabcar, đăng ký grab van ngay hôm nay để trở thành tài xế thời công nghệ. Thu nhập lên đến 35 triệu đồng/tháng khi hoạt động`,
+    description: `Hotline đăng ký Grab: 0343577939 - Đăng ký Grabcar, đăng ký grab van ngay hôm nay để trở thành tài xế thời công nghệ. Thu nhập lên đến 35 triệu đồng/tháng khi hoạt động`,
     metadataBase: new URL(siteURL),
     alternates: {
       canonical: "/",
     },
     openGraph: {
       title: 'Đăng ký Grab car, đăng ký Grab van tại Thành phố Hồ Chí Minh, Hà Nội và 1 số tỉnh thành khác | Grab Việt Nam.',
-      description: 'Hotline đăng ký Grab: 0902340912 - Đăng ký Grabcar, đăng ký grab van ngay hôm nay để trở thành tài xế thời công nghệ. Thu nhập lên đến 35 triệu đồng/tháng khi hoạt động',
+      description: 'Hotline đăng ký Grab: 0343577939 - Đăng ký Grabcar, đăng ký grab van ngay hôm nay để trở thành tài xế thời công nghệ. Thu nhập lên đến 35 triệu đồng/tháng khi hoạt động',
       url: siteURL,
       siteName: 'Đăng ký grab',
       type: 'website',
