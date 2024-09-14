@@ -21,7 +21,7 @@ export async function generateMetadata() {
       siteName: 'Đăng ký grab',
       type: 'website',
     },
-    keywords: ['Grab', "Đăng ký Grab", "Grab car", "Grab van", "Hướng dẫn đăng ký grab"]
+    keywords: ['Grab', "Đăng ký Grab", "Grab car", "Grab van", "Hướng dẫn đăng ký grab", "htx sao sài gòn", "hợp tác xã sài gòn", "hợp tác xã vận tải sài gòn", "đăng ký grab việt nam", "đăng ký grab car", "đăng ký grab van", "đăng ký grab van tại", "hợp tác xã"],
   };
 }
 
