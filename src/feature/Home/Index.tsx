@@ -115,8 +115,7 @@ const HomePage = () => {
           </Col>
           <Col xs={24} xl={10}>
             <div className="xl:p-12 p-4">
-            <Image src={ImageBanner} alt="image" className="w-full" />
-
+              <Image src={ImageBanner} alt="image" className="w-full" loading="lazy" />
             </div>
           </Col>
         </Row>
@@ -284,7 +283,7 @@ const HomePage = () => {
               />
             </div>
             <div className="mt-8">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4022.4420269194!2d106.72602117515599!3d10.707495889437155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752568b2fc62af%3A0xb9ba30f3f18fa833!2zSOG7o3AgdMOhYyB4w6MgduG6rW4gdOG6o2kgU2FvIFPDoGkgR8Oybg!5e1!3m2!1sfr!2s!4v1725790588643!5m2!1sfr!2s" width="100%" height="450" loading="lazy"></iframe>
+            <iframe title="company-address" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4022.4420269194!2d106.72602117515599!3d10.707495889437155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752568b2fc62af%3A0xb9ba30f3f18fa833!2zSOG7o3AgdMOhYyB4w6MgduG6rW4gdOG6o2kgU2FvIFPDoGkgR8Oybg!5e1!3m2!1sfr!2s!4v1725790588643!5m2!1sfr!2s" width="100%" height="450" loading="lazy"></iframe>
             </div>
           </div>
         </div>
